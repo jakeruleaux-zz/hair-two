@@ -32,7 +32,7 @@
 
         function save()
         {
-            $executed = $GLOBALS['DB']->exec("INSERT INTO stylists (name) VALUES ('{$this->getStylistName()}');");
+            $executed = $GLOBALS['DB']->exec("INSERT INTO stylists (stylist_name) VALUES ('{$this->getStylistName()}');");
             if ($executed) {
                 $this->id= $GLOBALS['DB']->lastInsertId();
                 return true;
@@ -46,7 +46,7 @@
             $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylists;");
             $stylists = array();
             foreach($returned_stylists as $stylist) {
-                $stylist_name = $stylist['name'];
+                $stylist_name = $stylist['stylist_name'];
                 $id = $stylist['id'];
                 $new_stylist = new Stylist($stylist_name, $id);
                 array_push($stylists, $new_stylist);
@@ -61,7 +61,7 @@
             $returned_stylists->bindParam(':id', $search_id, PDO::PARAM_STR);
             $returned_stylists->execute();
             foreach($returned_stylists as $stylist) {
-                $stylist_name = $stylist['name'];
+                $stylist_name = $stylist['stylist_name'];
                 $stylist_id = $stylist['id'];
                 if ($stylist_id == $search_id) {
                 $found_stylist = new Stylist($stylist_name, $stylist_id);
@@ -75,7 +75,7 @@
             $clients = Array();
             $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {$this->getId()};");
             foreach($returned_clients as $client) {
-                $client_name = $client['name'];
+                $client_name = $client['client_name'];
                 $stylist_id = $client['stylist_id'];
                 $client_id = $client['id'];
                 //$stylist_id = $client['stylist_id'];
@@ -87,7 +87,7 @@
 
         function update($new_stylist_name)
         {
-            $executed = $GLOBALS['DB']->exec("UPDATE stylists SET name = '{$new_stylist_name}' WHERE id = {$this->getId()};");
+            $executed = $GLOBALS['DB']->exec("UPDATE stylists SET stylist_name = '{$new_stylist_name}' WHERE id = {$this->getId()};");
             if ($executed) {
             $this->setStylistName($new_stylist_name);
                 return true;

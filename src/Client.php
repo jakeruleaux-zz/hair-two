@@ -40,7 +40,7 @@
 
         function save()
         {
-            $executed = $GLOBALS['DB']->exec("INSERT INTO clients (name, stylist_id) VALUES ('{$this->getClientName()}', {$this->getStylistId()})");
+            $executed = $GLOBALS['DB']->exec("INSERT INTO clients (client_name, stylist_id) VALUES ('{$this->getClientName()}', {$this->getStylistId()})");
             if ($executed) {
                  $this->id= $GLOBALS['DB']->lastInsertId();
                  return true;
@@ -54,7 +54,7 @@
             $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients;");
             $clients = array();
             foreach($returned_clients as $client) {
-               $client_name = $client['name'];
+               $client_name = $client['client_name'];
                $stylist_id = $client['stylist_id'];
                $id = $client['id'];
                $new_client = new Client($client_name, $stylist_id, $id);
@@ -69,7 +69,7 @@
             $returned_clients->bindParam(':id', $search_id, PDO::PARAM_STR);
             $returned_clients->execute();
             foreach($returned_clients as $client) {
-                $client_name = $client['name'];
+                $client_name = $client['client_name'];
                 $stylist_id = $client['stylist_id'];
                 $id = $client['id'];
                 if ($id == $search_id) {
@@ -81,7 +81,7 @@
 
         function update($new_client_name)
         {
-            $executed = $GLOBALS['DB']->exec("UPDATE clients SET name = '{$new_client_name}' WHERE id = {$this->getId()};");
+            $executed = $GLOBALS['DB']->exec("UPDATE clients SET client_name = '{$new_client_name}' WHERE id = {$this->getId()};");
             if ($executed) {
             $this->setClientName($new_client_name);
                 return true;
