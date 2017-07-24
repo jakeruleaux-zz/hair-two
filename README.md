@@ -1,59 +1,64 @@
-Hair Salon
+* Hair Salon
 
-Hair Salon App, 07/14/17
+* Hair Salon App, 07/14/17
 
 By Jacob Ruleaux
 
-Description;
+* Description;
 
-The Hair Salon app shows current stylists as well as a list of each stylists' clients. The program will allow user to add stylists or clients, or delete either.
+* The Hair Salon app shows current stylists as well as a list of each stylists' clients. The program will allow user to add stylists or clients, or delete either.
 
-Setup/Installation Requirements
+* Setup/Installation Requirements
 
-Open GitHub site on your browser: https://github.com/jakeruleaux/hair-two
+  * You Will Need MAMP installed.
 
-Select the dropdown (green box) "Clone or download"
+  * You Will Need Composer Installed.
 
-Copy the link for the GitHub repository
+* Open GitHub site on your browser: https://github.com/jakeruleaux/hair-two
 
-Open Terminal on your computer
+* Select the dropdown (green box) "Clone or download"
 
-In Terminal, perform the following steps:
+* Copy the link for the GitHub repository
 
-Type 'cd desktop' and press enter.
+* Open Terminal on your computer
 
-Type 'git clone' then copy the repository link and press enter.
+* In Terminal, perform the following steps:
 
-Type 'cd hair-two' to access the path on your terminal.
+* Type 'cd desktop' and press enter.
 
-Type 'composer install' in terminal to download terminal.
+* Type 'git clone' then copy the repository link and press enter.
 
-Type 'localhost:8888/phpmyadmin' and select the import tab near the top of the screen. In the import tab browse for 'hair_salon.sql.zip'.
+* Type 'cd hair-two' to access the path on your terminal.
 
-Select this file and click the 'go' button at the bottom.
+* Type 'composer install' in terminal to download terminal.
 
-In Terminal type /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot.
+* Type 'localhost:8888/phpmyadmin' and select the import tab near the top of the screen. In the import tab browse for 'hair_salon.sql.zip'.
 
-In mysql type 'SHOW DATABASES;' to confirm that you have the 'hair_salon' database.
+* Select this file and click the 'go' button at the bottom.
 
-In mysql type 'USE hair_salon;'.
+* In Terminal type /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot.
 
-In your Address Bar type 'localhost:8888' to view app.
+* In mysql type 'SHOW DATABASES;' to confirm that you have the 'hair_salon' database.
 
-The paths in MAMP may need to be adjusted. In MAMP click the 'web server' tab. Make sure you have the appropriate document root path, ex: 'User/File-directory/file/web'.
+* In mysql type 'USE hair_salon;'.
 
-Known Bugs
+* In your Address Bar type 'localhost:8888' to view app.
 
-The program requires a localhost to function. It was designed with MAMP in mind. Similar programs may support it.
+* The paths in MAMP may need to be adjusted. In MAMP click the 'web server' tab. Make sure you have the appropriate document root path, ex: 'User/File-directory/file/web'.
 
-Support and contact details
+* Known Bugs
 
-Feel free to contact the author with questions or concerns at jakeruleaux@hotmail.com
+* The program requires a localhost to function. It was designed with MAMP in mind. Similar programs may support it.
 
-Technologies Used
+* Support and contact details
+
+ Feel free to contact the author with questions or concerns at jakeruleaux@hotmail.com
+
+* Technologies Used
+
 The application relies on MAMP, PHP, Silex, Twig with some Bootstrap for styling and basic HTML for display.
 
-License
-MIT
+* License
+  MIT
 
-Copyright (c) 2017 Jacob Ruleaux
+* Copyright (c) 2017 Jacob Ruleaux
