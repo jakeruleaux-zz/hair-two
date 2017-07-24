@@ -7,7 +7,28 @@
   <body>
     <h1>It's A hairy world out there!</h1>
 
-    <h3><a href="/clients">Add or view a client</a></h3>
-    <h3><a href="/stylists">Add or view a stylist</a></h3>
+    <h1>Hair choppers!</h1>
+
+      {% if stylists is not empty %}
+      <p>Here are all your stylists:</p>
+      <ul>
+        {% for stylist in stylists %}
+        <li><a href="/stylist/{{ stylist.getId }}">{{ stylist.getStylistName }}</a></li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <h2>Put a Stylist on the list</h2>
+      <form action='/stylists' method='post'>
+        <label for='stylist_name'>Stylist Name</label>
+        <input id='stylist_name' name='stylist_name' type='text' required>
+        <button type="submit" name="button">Add</button>
+      </form>
+        <form action='/delete_stylists' method='post'>
+              <button type='submit' class='btn-info'>Clear</button>
+      </form>
+
+
+    <!-- <h3><a href="/clients">Add or view a client</a></h3>
+    <h3><a href="/stylists">Add or view a stylist</a></h3> -->
   </body>
 </html>

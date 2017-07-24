@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,9 +7,9 @@
   </head>
   <body>
     <div class="container">
-      <h1></h1>
+      <h1>{{ stylist.getStylistName }}</h1>
       {% if clients is not empty %}
-      <p>These people need a hair cut:</p>
+      <h1>These people need a hair cut:</h1>
       <ul>
         {% for client in clients %}
         <li>{{ client.getClientName }}</li>
@@ -18,17 +19,15 @@
 
       <h4>Add a client:</h4>
 
-      <form action='/clients' method='post'>
+      <form action="/clients" method="post">
         <input id="stylsit_id" name="stylist_id" type="hidden" value="{{ stylist.getId }}">
-        <label for="client_id">Select a victim</label>
-        <select id='client_id' name='client_id' type='text'>
-              {% for client in clients %}
-                <option value="{{ client.getId }}"> {{ client.getClientName }} </option>
-              {% endfor %}
-        </select>
-        <button type='submit'>Add client</button>
-    </form>
+        <label for="client_name">Client:</label>
+        <input type="text" name="client_name" id="client_name" value="" required>
+        <button type="submit" name="button">add</button>
+      </form>
+
 
     <p><a href='/'>Home</a></p>
-    </body>
+    </div>
+  </body>
 </html>

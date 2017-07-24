@@ -65,6 +65,7 @@
 
         static function find($search_id)
         {
+            $found_client = null;
             $returned_clients = $GLOBALS['DB']->prepare("SELECT * FROM clients WHERE id = :id");
             $returned_clients->bindParam(':id', $search_id, PDO::PARAM_STR);
             $returned_clients->execute();

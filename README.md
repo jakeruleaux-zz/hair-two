@@ -10,7 +10,7 @@ The Hair Salon app shows current stylists as well as a list of each stylists' cl
 
 Setup/Installation Requirements
 
-Open GitHub site on your browser: https://github.com/jakeruleaux/php-wk-3-d-5-hair
+Open GitHub site on your browser: https://github.com/jakeruleaux/hair-two
 
 Select the dropdown (green box) "Clone or download"
 
@@ -24,7 +24,7 @@ Type 'cd desktop' and press enter.
 
 Type 'git clone' then copy the repository link and press enter.
 
-Type 'cd php-wk-3-d-5-hair' to access the path on your terminal.
+Type 'cd hair-two' to access the path on your terminal.
 
 Type 'composer install' in terminal to download terminal.
 
