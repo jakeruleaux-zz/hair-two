@@ -22,7 +22,7 @@
     Request::enableHttpMethodParameterOverride();
 
     $app->get("/", function() use ($app) {
-        return $app['twig']->render('index.html.twig', array('clients' => Client::getAll(), Stylist::getAll()));
+        return $app['twig']->render('index.html.twig', array('stylsits' => Stylist::getAll()));
     });
 
     // $app->get("/stylists", function() use ($app) {
@@ -36,15 +36,11 @@
         return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
     });
 
-    // $app->get("/clients", function() use ($app) {
-    //     return $app['twig']->render('stylist.html.twig', array('clients' => Client::getAll()));
+    // $app->get('/stylist/{id}', function($id) use ($app) {
+    //     $stylist = Stylist::find($id);
+    //     return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
     // });
-
-    $app->get('/stylist/{id}', function($id) use ($app) {
-        $stylist = Stylist::find($id);
-        return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
-    });
-
+    //
     $app->post("/clients", function() use ($app) {
         $client_name = $_POST['client_name'];
         $stylist_id = $_POST['stylist_id'];
@@ -53,23 +49,23 @@
         $stylist = Stylist::find($stylist_id);
         return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist-> getClients()));
     });
-    //
-    // $app->get("/clients/{id}", function ($id) use ($app) {
+    // //
+    // $app->get("/clients/{id}/edit", function ($id) use ($app) {
     //     $client = Client::find($id);
-    //     return $app['twig']->render("client.html.twig", array('client' => $client, 'stylists' => $client->getClients()));
+    //     return $app['twig']->render("client_edit.html.twig", array('client' => $client));
     // });
-    //
+    // //
     // $app->patch("/clients/{id}", function($id) use ($app) {
     //   $client_name = $_POST['client_name'];
     //   $client = Client::find($id);
     //   $client->updateClientName($client_name);
-    //   return $app['twig']->render("client_edit.html.twig", array('stylists' => Stylist::getAll()));
+    //   return $app['twig']->render("stylist.html.twig", array('stylists' => Stylist::getAll()));
     // });
-    //
-    $app->get('/stylists/{id}', function($id) use ($app) {
-        $stylist = Stylist::find($id);
-        return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
-    });
+    // //
+    // $app->get('/stylists/{id}', function($id) use ($app) {
+    //     $stylist = Stylist::find($id);
+    //     return $app['twig']->render('stylist.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
+    // });
     //
     // $app->delete('/clients/{id}', function($id) use ($app) {
     //     $client = Client::find($id);

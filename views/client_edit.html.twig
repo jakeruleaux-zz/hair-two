@@ -11,12 +11,13 @@
         <input name='_method' type='hidden' value='patch'>
         <label for='client_name'>Change {{ client.getClientName }}</label><br>
         <input id='client_name' name='client_name' type='text' {{ client.getClientName }} required >
-        <button type='submit' class='btn-success'>Change Client</button>
+        <button type='submit'>Change Client</button>
       </form>
       <form action='/clients/{{ client.getId }}' method='post'>
         <input name='_method' type='hidden' value='delete'>
         <button type='submit' class='btn-danger'>86 this client</button>
       </form>
+      <p><a href='/'>Home</a></p>
     </div>
   </body>
 </html>>

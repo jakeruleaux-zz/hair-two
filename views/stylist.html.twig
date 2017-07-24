@@ -12,7 +12,7 @@
       <h1>These people need a hair cut:</h1>
       <ul>
         {% for client in clients %}
-        <li>{{ client.getClientName }}</li>
+        <li><a href='/clients/{{ client.getId }}/edit'>{{ client.getClientName }}</a></li>
         {% endfor %}
       </ul>
       {% endif %}
