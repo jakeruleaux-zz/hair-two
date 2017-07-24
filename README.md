@@ -26,6 +26,8 @@ Type 'git clone' then copy the repository link and press enter.
 
 Type 'cd php-wk-3-d-5-hair' to access the path on your terminal.
 
+Type 'composer install' in terminal to download terminal.
+
 Type 'localhost:8888/phpmyadmin' and select the import tab near the top of the screen. In the import tab browse for 'hair_salon.sql.zip'.
 
 Select this file and click the 'go' button at the bottom.

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
     <title>Hair Salon</title>
   </head>
   <body>
     <div class="container">
-      <h1>{{ stylist.getStylistName }}</h1>
+      <h1></h1>
       {% if clients is not empty %}
       <p>These people need a hair cut:</p>
       <ul>
@@ -18,11 +18,11 @@
 
       <h4>Add a client:</h4>
 
-      <form action='/add_clients' method='post'>
+      <form action='/clients' method='post'>
         <input id="stylsit_id" name="stylist_id" type="hidden" value="{{ stylist.getId }}">
         <label for="client_id">Select a victim</label>
         <select id='client_id' name='client_id' type='text'>
-              {% for client in students %}
+              {% for client in clients %}
                 <option value="{{ client.getId }}"> {{ client.getClientName }} </option>
               {% endfor %}
         </select>
